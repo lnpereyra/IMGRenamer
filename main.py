@@ -2,13 +2,12 @@ import os
 import re
 from pyunpack import Archive
 import os.path
-from tkinter import filedialog as fd
-from tkinter import *
+import tkinter
 import shutil
 
 # Carpeta contenedora del Keynote
-root1 = Tk()
-root1.directory = fd.askdirectory(
+root1 = tkinter.Tk()
+root1.directory = tkinter.filedialog.askdirectory(
     parent=root1,
     initialdir=os.getcwd(),
     title="Seleccionar la carpeta contenedora del Keynote:",
@@ -22,8 +21,8 @@ for file in os.listdir(directorio_original):
 Archive(nombre_keynote).extractall(directorio_original)
 
 # Directorio con carpetas de idiomas
-root = Tk()
-root.directory = fd.askdirectory(
+root = tkinter.Tk()
+root.directory = tkinter.filedialog.askdirectory(
     parent=root,
     initialdir=os.getcwd(),
     title="Seleccionar carpeta contenedora de Targets:",
