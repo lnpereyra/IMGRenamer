@@ -5,7 +5,7 @@ import os.path
 from tkinter import filedialog as fd
 from tkinter import *
 import shutil
- 
+
 # Carpeta contenedora del Keynote
 root1 = Tk()
 root1.directory = fd.askdirectory(
@@ -20,7 +20,7 @@ for file in os.listdir(directorio_original):
         nombre_keynote = os.path.join(directorio_original, file)
 # Extrae el contenido a al directorio principal
 Archive(nombre_keynote).extractall(directorio_original)
- 
+
 # Directorio con carpetas de idiomas
 root = Tk()
 root.directory = fd.askdirectory(
@@ -51,22 +51,22 @@ for root, dirs, files in os.walk(a):
                     directorio_traducido + foto_traducida,
                     directorio_traducido + foto_original,
                 )
-#Borro Carpetas y Archivos que ya no me sirven
+# Borro Carpetas y Archivos que ya no me sirven
 for root, dirs, files in os.walk(directorio_original):
     for name in dirs:
-        if name == 'VILT':
+        if name == "VILT":
             continue
         else:
-            shutil.rmtree (os.path.join(root, name))
+            shutil.rmtree(os.path.join(root, name))
     for name in files:
         if name.endswith(".key") or name.endswith(".pages"):
             continue
-        else :
+        else:
             print(directorio_original)
             print(root)
-            print(os.path.join(root,name))
-            os.remove( os.path.join( directorio_original, name ) )
- 
-#asi funciona pero tengo que evitar que tire el error al final,
-#no encuentra las imagenes que se guardaron en "name"
-#porque yo vuelvo al directorio_original , tengo que hacer que las saltee.
+            print(os.path.join(root, name))
+            os.remove(os.path.join(directorio_original, name))
+
+# asi funciona pero tengo que evitar que tire el error al final,
+# no encuentra las imagenes que se guardaron en "name"
+# porque yo vuelvo al directorio_original , tengo que hacer que las saltee.
