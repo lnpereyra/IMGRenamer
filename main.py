@@ -67,4 +67,6 @@ for root, dirs, files in os.walk(directorio_original):
             print(os.path.join(root,name))
             os.remove( os.path.join( directorio_original, name ) )
  
-#asi funciona pero tengo que evitar que tire el error al final, no encuentra las imagenes que se guardaron en "name" porque yo vuelvo al directorio_original , tengo que hacer que las saltee.
+#asi funciona pero tengo que evitar que tire el error al final,
+#no encuentra las imagenes que se guardaron en "name"
+#porque yo vuelvo al directorio_original , tengo que hacer que las saltee.
