@@ -18,7 +18,7 @@ pip install requirements.txt
 Once you have installed the requirements, run this on your terminal
 
 ```bash
-pip install requirements.txt
+python main.py
 ```
 Now Select the folder that contains your keynote file.
 
